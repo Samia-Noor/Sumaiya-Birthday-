@@ -4,217 +4,176 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🌸 Happy Birthday Sumaiya 🌸</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #fffafc, #ffe6f2);
-      overflow-x: hidden;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    h1 {
-      color: #d6336c;
-      font-size: 3em;
-      margin-bottom: 0.3em;
-    }
-    h2 {
-      color: #f06292;
-      margin: 1.5em 0 1em;
-    }
-    p {
-      font-size: 1.1em;
-      color: #333;
-      line-height: 1.6;
-    }
-    .btn {
-      background: #f06292;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 10px;
-      border-radius: 10px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #ec407a;
-    }
-    .section {
-      padding: 20px;
-      background: #fff0f5;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin: 20px 0;
-    }
-    .hidden {
-      display: none;
-    }
-    .floating-heart {
-      position: fixed;
-      animation: float 10s infinite;
-      font-size: 1.5rem;
-      color: #ffb6c1;
-      opacity: 0.5;
-    }
-    @keyframes float {
-      0% { transform: translateY(100vh); }
-      100% { transform: translateY(-10vh); }
-    }
-    .countdown {
-      font-size: 1.4em;
-      color: #c2185b;
-    }
-    textarea {
-      width: 100%;
-      max-width: 600px;
-      height: 100px;
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      margin-top: 10px;
-    }
-    .wish-list, .milestones {
-      text-align: left;
-      margin-top: 10px;
-    }
-    .wish-list li, .milestones li {
-      margin: 6px 0;
-      color: #555;
-    }
+    :root {
+      --main-color: #f48fb1;
+      --secondary-color: #fce4ec;
+      --accent-color: #ad1457;
+      --text-dark: #333;
+      --text-light: #fff;
+    }body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, var(--secondary-color), #fff);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--accent-color);
+  font-size: 2.8em;
+}
+
+h2 {
+  color: var(--main-color);
+  margin-top: 2em;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.section {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.btn {
+  background-color: var(--main-color);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+}
+
+.hidden {
+  display: none;
+  margin-top: 15px;
+  font-style: italic;
+  color: #555;
+}
+
+textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 100px;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.output {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #fce4ec;
+  border-radius: 8px;
+  color: #444;
+}
+
+.countdown {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: var(--accent-color);
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #888;
+}
+
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🎉 Happy Birthday Sumaiya! 🎂</h1>
-    <p>Welcome to a very special place filled with wishes, joy, secrets, laughter, and all things magical — just for you!</p><!-- Floating Hearts -->
-<script>
-  for (let i = 0; i < 60; i++) {
-    let heart = document.createElement('div');
-    heart.innerHTML = '💖';
-    heart.className = 'floating-heart';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (5 + Math.random() * 5) + 's';
-    heart.style.top = Math.random() * -100 + 'vh';
-    document.body.appendChild(heart);
-  }
-</script>
-
-<!-- Countdown Timer -->
+    <h1>🎉 Happy Birthday Sumaiya 🎂</h1>
+    <p>This is not just a website — it’s a heartfelt space built entirely for your joy and smiles. ✨</p><!-- Countdown Timer -->
 <div class="section">
-  <h2>🎈 Countdown to Next Birthday</h2>
+  <h2>⏳ Countdown to Your Special Day</h2>
   <div class="countdown" id="countdown"></div>
 </div>
 
-<!-- Wishes with Buttons -->
+<!-- Secret Messages -->
 <div class="section">
-  <h2>🌷 Hidden Wishes for You</h2>
-  <button class="btn" onclick="reveal('wish1')">Wish 1</button>
-  <button class="btn" onclick="reveal('wish2')">Wish 2</button>
-  <button class="btn" onclick="reveal('wish3')">Wish 3</button>
-  <button class="btn" onclick="reveal('wish4')">Wish 4</button>
-  <p id="wish1" class="hidden">"May your smile shine brighter than the stars."</p>
-  <p id="wish2" class="hidden">"You bring peace to every heart you touch."</p>
-  <p id="wish3" class="hidden">"You deserve a lifetime of love, magic, and giggles."</p>
-  <p id="wish4" class="hidden">"You're the blessing I never knew I needed until you came."</p>
+  <h2>💌 Secret Birthday Messages</h2>
+  <button class="btn" onclick="reveal('msg1')">Message 1</button>
+  <button class="btn" onclick="reveal('msg2')">Message 2</button>
+  <button class="btn" onclick="reveal('msg3')">Message 3</button>
+  <p id="msg1" class="hidden">You are a living poem — elegant, rare, and full of soul.</p>
+  <p id="msg2" class="hidden">Today the universe paused and smiled because you were born.</p>
+  <p id="msg3" class="hidden">You bring calm to storms and warmth to winters. From tears to smiles, from fears to make me calm, you always support me, you are always behind my every success. Thank you for being you.</p>
 </div>
 
-<!-- Guest Message Input -->
+<!-- Guest Message Box -->
 <div class="section">
-  <h2>💌 Leave a Secret Birthday Wish</h2>
-  <textarea id="guestInput" placeholder="Write something sweet for Sumaiya..."></textarea>
+  <h2>📬 Leave Your Wish Here, one day Inshallah I'll try to fulfill your wish  </h2>
+  <textarea id="guestInput" placeholder="Type your sweet birthday wish for Sumaiya..."></textarea>
   <br>
-  <button class="btn" onclick="postWish()">Post</button>
-  <div id="guestOutput"></div>
+  <button class="btn" onclick="postWish()">Send Wish</button>
+  <div id="guestOutput" class="output" style="display: none;"></div>
 </div>
 
-<!-- 20+ Wishes Displayed -->
+<!-- Share -->
 <div class="section">
-  <h2>🌟 20+ Magical Wishes Just for You</h2>
-  <ul class="wish-list">
-    <li>🌈 May your heart always be young and full of dreams.</li>
-    <li>🎀 May love always find its way to you.</li>
-    <li>🎊 Your laughter is the song of joy in every room.</li>
-    <li>🌸 Stay soft, stay kind, stay golden.</li>
-    <li>🕊️ May your soul always feel free.</li>
-    <li>💎 Your heart is rare — protect it, honor it.</li>
-    <li>💫 May your future be brighter than the sun.</li>
-    <li>🧚‍♀️ You are magic — pure and unstoppable.</li>
-    <li>🌷 The world blooms wherever you walk.</li>
-    <li>🍀 Your presence is good luck to many lives.</li>
-    <li>🌼 Smile more, worry less. You’re doing great!</li>
-    <li>🦋 May each moment unfold beauty for you.</li>
-    <li>🌠 Never stop dreaming — you're meant to soar.</li>
-    <li>✨ You are loved. More than you know.</li>
-    <li>📖 Your story is just beginning. Write it with stars.</li>
-    <li>💓 Your kindness echoes across hearts.</li>
-    <li>🌞 Keep lighting up rooms, Sumaiya!</li>
-    <li>🧁 May sweetness follow you everywhere.</li>
-    <li>🥰 Your soul is gold.</li>
-    <li>🎈 Happy YOU day — not just birthday!</li>
-  </ul>
+  <h2>🔗 Share this Page</h2>
+  <button class="btn" onclick="sharePage()">Share via WhatsApp</button>
 </div>
 
-<!-- Milestone Timeline -->
-<div class="section">
-  <h2>🕰️ Milestones and Memories</h2>
-  <ul class="milestones">
-    <li>👶 First laugh that melted everyone’s heart.</li>
-    <li>📚 Top student, always bright!</li>
-    <li>🎨 Painted a world with her imagination.</li>
-    <li>👯‍♀️ Best friend for life — Samia & Sumaiya bond!</li>
-    <li>🕊️ Always spreading peace, even in chaos.</li>
-    <li>💐 Giver of love, hugs, and hope.</li>
-    <li>🚀 Ready to take over the world!</li>
-  </ul>
-</div>
-
-<!-- Share Button -->
-<div class="section">
-  <h2>📤 Share this with Love</h2>
-  <button class="btn" onclick="sharePage()">Share on WhatsApp</button>
-</div>
-
-<footer style="margin-top: 40px; font-size: 0.9em; color: #777;">
-  Made with 100+ features and endless love by Samia Noor 💕
+<footer>
+  Handcrafted with care and calmness by Samia Noor — August 2025 🎂
 </footer>
 
   </div>  <script>
     function reveal(id) {
-      const el = document.getElementById(id);
-      el.classList.toggle('hidden');
+      const msg = document.getElementById(id);
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
     }
 
     function postWish() {
-      const input = document.getElementById('guestInput').value;
+      const val = document.getElementById('guestInput').value;
       const output = document.getElementById('guestOutput');
-      if (input.trim()) {
-        output.innerHTML = `<p style='color:#c2185b;'>💬 "${input}"</p>`;
+      if (val.trim()) {
+        output.innerHTML = `💬 "${val}"`;
+        output.style.display = 'block';
       }
     }
 
     function sharePage() {
       const url = window.location.href;
-      const msg = `🎂 Send Sumaiya the best birthday surprise! Check this: ${url}`;
-      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+      const text = `🎉 Celebrate Sumaiya's special day with love! Visit: ${url}`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
     }
 
-    // Countdown Timer
+    // Countdown
     const bday = new Date('August 5, 2026 00:00:00').getTime();
     setInterval(() => {
       const now = new Date().getTime();
-      const distance = bday - now;
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const secs = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("countdown").innerText = `${days}d ${hours}h ${mins}m ${secs}s`;
+      const diff = bday - now;
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('countdown').innerText = `${d}d ${h}h ${m}m ${s}s left until 5 August!`;
     }, 1000);
   </script></body>
   </html>
