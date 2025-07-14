@@ -7,99 +7,133 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #ffd6e0, #ffeaa7);
+      background: linear-gradient(to right, #fff0f5, #ffe4e1);
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
     }
     .card {
       background: white;
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 0 20px pink;
-      max-width: 600px;
+      box-shadow: 0 8px 24px rgba(255, 105, 180, 0.2);
+      max-width: 700px;
       width: 90%;
       text-align: center;
       position: relative;
       z-index: 1;
+      animation: fadeIn 1.2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     h1 {
-      color: #ff6b81;
-      font-size: 2em;
+      color: #ff69b4;
+      font-size: 2.2em;
+      margin-bottom: 10px;
     }
     p {
-      color: #555;
+      color: #444;
       font-size: 1.1em;
+      margin: 10px 0;
     }
-    .btn-group {
-      margin-top: 20px;
+    .btn-group, .gallery, .countdown {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
     button {
-      background-color: #ff6b81;
+      background-color: #ff69b4;
       color: white;
       border: none;
       padding: 10px 20px;
-      margin: 10px;
       border-radius: 10px;
       font-size: 1em;
       cursor: pointer;
+      transition: background 0.3s;
     }
     button:hover {
-      background-color: #ff4d6d;
+      background-color: #ff1493;
     }
     .floating-heart {
       position: absolute;
       animation: floatUp 8s linear infinite;
-      color: pink;
+      color: #ffb6c1;
       font-size: 24px;
-      opacity: 0.7;
+      opacity: 0.6;
     }
     @keyframes floatUp {
-      0% {
-        bottom: 0;
-        opacity: 1;
-        transform: translateX(0);
-      }
-      100% {
-        bottom: 100%;
-        opacity: 0;
-        transform: translateX(-20px);
-      }
+      0% { bottom: 0; opacity: 1; transform: translateX(0); }
+      100% { bottom: 100%; opacity: 0; transform: translateX(-20px); }
     }
     footer {
       margin-top: 20px;
       color: #777;
       font-size: 0.9em;
     }
-    .quote-box {
-      margin-top: 20px;
-      background: #fff3f3;
-      padding: 20px;
+    .hidden-message {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #fff0f5;
+      border: 1px dashed #ff69b4;
       border-radius: 10px;
-      border: 1px dashed #ff6b81;
-    }
-    .quote-box p {
-      font-style: italic;
       color: #d6336c;
+      font-style: italic;
     }
-    .wish-list {
-      text-align: left;
-      margin-top: 30px;
+    .gallery img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    .wish-list li {
-      margin-bottom: 10px;
-      color: #444;
+    .countdown-box {
+      background: #ffeef0;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: #c2185b;
+    }
+    .message-box {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .message-box textarea {
+      width: 90%;
+      max-width: 500px;
+      height: 100px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    .message-box .output {
+      background: #fef3f7;
+      padding: 10px;
+      border-radius: 10px;
+      color: #333;
+      width: 90%;
+      max-width: 500px;
+      display: none;
     }
   </style>
 </head>
 <body>
   <!-- Floating hearts -->
   <script>
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
       const heart = document.createElement('div');
       heart.classList.add('floating-heart');
       heart.innerText = '💖';
@@ -109,46 +143,74 @@
     }
   </script>  <div class="card">
     <h1>🎉 Happy Birthday Sumaiya! 🎂</h1>
-    <p>To my best friend & soulmate, you fill my life with love and joy. 💖</p>
-    <p>I’m beyond blessed to walk this journey of life with someone as precious as you.</p>
-    <p>May your smile be brighter than the candles, and your heart warmer than all the hugs. 🕯️💞</p>
-    <p>With all my love, Samia 💕</p><div class="quote-box">
-  <p>"You are my sunshine on cloudy days, my warmth in cold times, and the joy in every laugh we share."</p>
-</div>
-
-<ul class="wish-list">
-  <li>🎈 May all your dreams take flight and land in success.</li>
-  <li>🌟 You deserve endless happiness and peace in your heart.</li>
-  <li>💌 Thank you for being a source of strength and inspiration.</li>
-  <li>🎁 Your kindness, beauty, and light make the world better.</li>
-  <li>🌼 Here's to love, laughter, and magical memories forever!</li>
-</ul>
-
+    <p>To my best friend & soulmate, you are the reason my world is so beautiful. 💖</p>
+    <p>Wishing you a day filled with love, laughter, magic, and unforgettable moments. ✨</p>
+    <p>Forever by your side – Samia 💕</p><!-- Buttons for messages -->
 <div class="btn-group">
-  <button onclick="showMoreWishes()">✨ Show More Wishes</button>
+  <button onclick="toggleMessage('msg1')">🌷 Wish 1</button>
+  <button onclick="toggleMessage('msg2')">🌟 Wish 2</button>
+  <button onclick="toggleMessage('msg3')">💌 Wish 3</button>
+  <button onclick="toggleMessage('msg4')">🎁 Wish 4</button>
   <button onclick="sharePage()">📤 Share This Page</button>
 </div>
 
-<div id="extra-wishes" style="display:none; margin-top: 20px; text-align:left;">
-  <ul>
-    <li>🌈 Every second with you is a blessing beyond words.</li>
-    <li>🦋 May your year be filled with adventures, serenity, and true love.</li>
-    <li>🎀 You're not just a friend, you're a forever sister.</li>
-    <li>🌻 Keep blooming beautifully, Sumaiya!</li>
-  </ul>
+<div id="msg1" class="hidden-message">You make the world brighter just by being in it. 🌞</div>
+<div id="msg2" class="hidden-message">You deserve every beautiful thing life can offer. 🌈</div>
+<div id="msg3" class="hidden-message">Friends like you are rare. Soulmates like you are a gift. 🎀</div>
+<div id="msg4" class="hidden-message">May your dreams come true in the most magical ways! ✨</div>
+
+<!-- Countdown Timer -->
+<div class="countdown-box">
+  🎈 Countdown to your next birthday: <span id="countdown"></span>
 </div>
 
-<footer>© 2025 Made with endless love by Samia Noor 💐</footer>
+<!-- Guest Message -->
+<div class="message-box">
+  <textarea id="guestInput" placeholder="Write your birthday wish for Sumaiya..."></textarea>
+  <button onclick="postMessage()">📨 Post Wish</button>
+  <div id="guestOutput" class="output"></div>
+</div>
+
+<!-- Gallery Placeholder -->
+<div class="gallery">
+  <img src="https://placekitten.com/100/100" alt="Memory 1">
+  <img src="https://placekitten.com/101/100" alt="Memory 2">
+  <img src="https://placekitten.com/102/100" alt="Memory 3">
+</div>
+
+<footer>© 2025 Designed with pure love by Samia Noor 💐</footer>
 
   </div>  <script>
+    function toggleMessage(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
     function sharePage() {
       const url = window.location.href;
       const message = `🎂 Wish Sumaiya a Happy Birthday! 💖 Check this: ${url}`;
       window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
     }
 
-    function showMoreWishes() {
-      document.getElementById("extra-wishes").style.display = "block";
+    function postMessage() {
+      const input = document.getElementById("guestInput").value;
+      const output = document.getElementById("guestOutput");
+      if (input.trim()) {
+        output.innerText = `💬 Your wish: "${input}"`;
+        output.style.display = 'block';
+      }
     }
+
+    // Countdown Timer
+    const birthday = new Date('July 14, 2026 00:00:00').getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = birthday - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
   </script></body>
-</html>
+  </html>
