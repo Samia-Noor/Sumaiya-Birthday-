@@ -10,12 +10,14 @@
       --accent-color: #ad1457;
       --text-dark: #333;
       --text-light: #fff;
+      --box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to right, var(--secondary-color), #fff);
   color: var(--text-dark);
+  background-attachment: fixed;
 }
 
 .container {
@@ -45,7 +47,7 @@ p {
   padding: 20px;
   border-radius: 10px;
   background: #ffffff;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: var(--box-shadow);
 }
 
 .btn {
@@ -69,6 +71,7 @@ p {
   margin-top: 15px;
   font-style: italic;
   color: #555;
+  transition: all 0.4s ease;
 }
 
 textarea {
@@ -102,10 +105,43 @@ footer {
   color: #888;
 }
 
+.ribbon {
+  background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.fact-box {
+  background: #fff3f7;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-style: italic;
+  box-shadow: var(--box-shadow);
+}
+
+.toggle-mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--main-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: var(--box-shadow);
+}
+
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="ribbon">🌟 A Beautiful Day to Celebrate Sumaiya 🌟</div>
     <h1>🎉 Happy Birthday Sumaiya 🎂</h1>
     <p>This is not just a website — it’s a heartfelt space built entirely for your joy and smiles. ✨</p><!-- Countdown Timer -->
 <div class="section">
@@ -116,21 +152,23 @@ footer {
 <!-- Secret Messages -->
 <div class="section">
   <h2>💌 Secret Birthday Messages</h2>
-  <button class="btn" onclick="reveal('msg1')">Message 1</button>
-  <button class="btn" onclick="reveal('msg2')">Message 2</button>
-  <button class="btn" onclick="reveal('msg3')">Message 3</button>
-  <p id="msg1" class="hidden">You are a living poem — elegant, rare, and full of soul.</p>
-  <p id="msg2" class="hidden">Today the universe paused and smiled because you were born.</p>
-  <p id="msg3" class="hidden">You bring calm to storms and warmth to winters. From tears to smiles, from fears to make me calm, you always support me, you are always behind my every success. Thank you for being you.</p>
+  <div id="messages"></div>
 </div>
 
 <!-- Guest Message Box -->
 <div class="section">
-  <h2>📬 Leave Your Wish Here, one day Inshallah I'll try to fulfill your wish  </h2>
+  <h2>📬 Leave Your Wish Here</h2>
   <textarea id="guestInput" placeholder="Type your sweet birthday wish for Sumaiya..."></textarea>
   <br>
   <button class="btn" onclick="postWish()">Send Wish</button>
   <div id="guestOutput" class="output" style="display: none;"></div>
+</div>
+
+<!-- Fun Fact Section -->
+<div class="section">
+  <h2>🧠 Fun Fact About Sumaiya</h2>
+  <div class="fact-box" id="factBox">Click the button to discover something lovely!</div>
+  <button class="btn" onclick="showFact()">Reveal Fun Fact</button>
 </div>
 
 <!-- Share -->
@@ -140,14 +178,39 @@ footer {
 </div>
 
 <footer>
-  Handcrafted with care and calmness by Samia Noor — August 2025 🎂
+  Handcrafted with calmness & love by Samia Noor — August 2025 🎂
 </footer>
 
-  </div>  <script>
-    function reveal(id) {
-      const msg = document.getElementById(id);
-      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
-    }
+  </div>  <div class="toggle-mode" onclick="toggleTheme()">🌓 Mode</div>  <script>
+    const birthdayMessages = [
+      "You are a living poem — elegant, rare, and full of soul.",
+      "Today the universe paused and smiled because you were born.",
+      "You bring calm to storms and warmth to winters. Thank you for being you.",
+      "May your laughter echo through the heavens.",
+      "You're the kind of soul that angels write stories about.",
+      "You deserve all the hugs, stars, and cherry blossoms in the world.",
+      "Your presence is a garden in full bloom.",
+      "You are strength wrapped in beauty and grace.",
+      "Your light heals hearts — keep shining.",
+      "Today we don’t just celebrate your birth, we celebrate your magic."
+    ];
+
+    const msgContainer = document.getElementById("messages");
+    birthdayMessages.forEach((msg, i) => {
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.innerText = `Message ${i + 1}`;
+      const p = document.createElement("p");
+      p.className = "hidden";
+      p.id = `msg${i}`;
+      p.innerText = msg;
+      btn.onclick = () => {
+        const current = document.getElementById(`msg${i}`);
+        current.style.display = current.style.display === "block" ? "none" : "block";
+      };
+      msgContainer.appendChild(btn);
+      msgContainer.appendChild(p);
+    });
 
     function postWish() {
       const val = document.getElementById('guestInput').value;
@@ -175,5 +238,42 @@ footer {
       const s = Math.floor((diff % (1000 * 60)) / 1000);
       document.getElementById('countdown').innerText = `${d}d ${h}h ${m}m ${s}s left until 5 August!`;
     }, 1000);
+
+    // Fun Fact Reveal
+    const facts = [
+      "Sumaiya once brought peace in a chaotic group chat just by saying 'Hi.'",
+      "She makes the best chai and the best advice combo.",
+      "Sumaiya’s kindness once made someone cry tears of joy.",
+      "Even flowers feel shy blooming next to her beauty!",
+      "She has a superpower: turning sadness into smiles."
+    ];
+
+    function showFact() {
+      const box = document.getElementById('factBox');
+      const random = facts[Math.floor(Math.random() * facts.length)];
+      box.innerText = random;
+    }
+
+    // Light/Dark Mode Toggle
+    function toggleTheme() {
+      const root = document.documentElement;
+      if (root.style.getPropertyValue('--main-color') === '#f48fb1') {
+        root.style.setProperty('--main-color', '#333');
+        root.style.setProperty('--secondary-color', '#111');
+        root.style.setProperty('--accent-color', '#f48fb1');
+        root.style.setProperty('--text-dark', '#fff');
+        root.style.setProperty('--text-light', '#000');
+        document.body.style.background = '#111';
+        document.body.style.color = '#fff';
+      } else {
+        root.style.setProperty('--main-color', '#f48fb1');
+        root.style.setProperty('--secondary-color', '#fce4ec');
+        root.style.setProperty('--accent-color', '#ad1457');
+        root.style.setProperty('--text-dark', '#333');
+        root.style.setProperty('--text-light', '#fff');
+        document.body.style.background = '';
+        document.body.style.color = '';
+      }
+    }
   </script></body>
-  </html>
+</html>
