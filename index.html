@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,17 +34,6 @@
     p {
       color: #555;
       font-size: 1.1em;
-    }
-    .images {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .images img {
-      border-radius: 15px;
-      width: 45%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
     .btn-group {
       margin-top: 20px;
@@ -87,10 +75,28 @@
       color: #777;
       font-size: 0.9em;
     }
+    .quote-box {
+      margin-top: 20px;
+      background: #fff3f3;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px dashed #ff6b81;
+    }
+    .quote-box p {
+      font-style: italic;
+      color: #d6336c;
+    }
+    .wish-list {
+      text-align: left;
+      margin-top: 30px;
+    }
+    .wish-list li {
+      margin-bottom: 10px;
+      color: #444;
+    }
   </style>
 </head>
 <body>
-
   <!-- Floating hearts -->
   <script>
     for (let i = 0; i < 20; i++) {
@@ -101,46 +107,48 @@
       heart.style.animationDuration = (4 + Math.random() * 6) + 's';
       document.body.appendChild(heart);
     }
-  </script>
-
-  <!-- Music -->
-  <audio id="bgMusic" src="birthday-music.mp3" loop></audio>
-
-  <div class="card">
+  </script>  <div class="card">
     <h1>🎉 Happy Birthday Sumaiya! 🎂</h1>
     <p>To my best friend & soulmate, you fill my life with love and joy. 💖</p>
     <p>I’m beyond blessed to walk this journey of life with someone as precious as you.</p>
     <p>May your smile be brighter than the candles, and your heart warmer than all the hugs. 🕯️💞</p>
-    <p>With all my love, Samia 💕</p>
+    <p>With all my love, Samia 💕</p><div class="quote-box">
+  <p>"You are my sunshine on cloudy days, my warmth in cold times, and the joy in every laugh we share."</p>
+</div>
 
-    <div class="images">
-      <img src="sumaiya1.jpg" alt="Sumaiya smiling">
-      <img src="sumaiya2.jpg" alt="Sumaiya moment">
-    </div>
+<ul class="wish-list">
+  <li>🎈 May all your dreams take flight and land in success.</li>
+  <li>🌟 You deserve endless happiness and peace in your heart.</li>
+  <li>💌 Thank you for being a source of strength and inspiration.</li>
+  <li>🎁 Your kindness, beauty, and light make the world better.</li>
+  <li>🌼 Here's to love, laughter, and magical memories forever!</li>
+</ul>
 
-    <div class="btn-group">
-      <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
-      <button onclick=\"sharePage()\">📤 Share This Page</button>
-    </div>
+<div class="btn-group">
+  <button onclick="showMoreWishes()">✨ Show More Wishes</button>
+  <button onclick="sharePage()">📤 Share This Page</button>
+</div>
 
-    <footer>© 2025 Made with endless love by Samia Noor 💐</footer>
-  </div>
+<div id="extra-wishes" style="display:none; margin-top: 20px; text-align:left;">
+  <ul>
+    <li>🌈 Every second with you is a blessing beyond words.</li>
+    <li>🦋 May your year be filled with adventures, serenity, and true love.</li>
+    <li>🎀 You're not just a friend, you're a forever sister.</li>
+    <li>🌻 Keep blooming beautifully, Sumaiya!</li>
+  </ul>
+</div>
 
-  <script>
-    const audio = document.getElementById(\"bgMusic\");
-    function toggleMusic() {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    }
+<footer>© 2025 Made with endless love by Samia Noor 💐</footer>
 
+  </div>  <script>
     function sharePage() {
       const url = window.location.href;
-      const message = `🎂 Wish Sumaiya a Happy Birthday! 💖\nCheck this surprise: ${url}`;
+      const message = `🎂 Wish Sumaiya a Happy Birthday! 💖 Check this: ${url}`;
       window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
     }
-  </script>
-</body>
-        </html>
+
+    function showMoreWishes() {
+      document.getElementById("extra-wishes").style.display = "block";
+    }
+  </script></body>
+</html>
