@@ -1,34 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Happy Birthday Sumaiya</title>
-    <style>
-      body {
-        background: linear-gradient(to right, #ffd6e0, #fff2cc);
-        font-family: sans-serif;
-        text-align: center;
-        padding: 40px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Sumaiya</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffd6e0, #ffeaa7);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px pink;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      color: #ff6b81;
+      font-size: 2em;
+    }
+    p {
+      color: #555;
+      font-size: 1.1em;
+    }
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .images img {
+      border-radius: 15px;
+      width: 45%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .btn-group {
+      margin-top: 20px;
+    }
+    button {
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff4d6d;
+    }
+    .floating-heart {
+      position: absolute;
+      animation: floatUp 8s linear infinite;
+      color: pink;
+      font-size: 24px;
+      opacity: 0.7;
+    }
+    @keyframes floatUp {
+      0% {
+        bottom: 0;
+        opacity: 1;
+        transform: translateX(0);
       }
-      .card {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 0 15px pink;
-        max-width: 500px;
-        margin: auto;
+      100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(-20px);
       }
-      h1 {
-        color: #ff6b81;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>🎉 Happy Birthday Sumaiya! 🎂</h1>
-      <p>To my best friend & soulmate, you fill my life with love and joy. 💖</p>
-      <p>I’m forever grateful for you. May your day shine as bright as you do. ✨</p>
-      <p>With love, Samia 💕</p>
+    }
+    footer {
+      margin-top: 20px;
+      color: #777;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating hearts -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('floating-heart');
+      heart.innerText = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 6) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Music -->
+  <audio id="bgMusic" src="birthday-music.mp3" loop></audio>
+
+  <div class="card">
+    <h1>🎉 Happy Birthday Sumaiya! 🎂</h1>
+    <p>To my best friend & soulmate, you fill my life with love and joy. 💖</p>
+    <p>I’m beyond blessed to walk this journey of life with someone as precious as you.</p>
+    <p>May your smile be brighter than the candles, and your heart warmer than all the hugs. 🕯️💞</p>
+    <p>With all my love, Samia 💕</p>
+
+    <div class="images">
+      <img src="sumaiya1.jpg" alt="Sumaiya smiling">
+      <img src="sumaiya2.jpg" alt="Sumaiya moment">
     </div>
-  </body>
-</html>
+
+    <div class="btn-group">
+      <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
+      <button onclick=\"sharePage()\">📤 Share This Page</button>
+    </div>
+
+    <footer>© 2025 Made with endless love by Samia Noor 💐</footer>
+  </div>
+
+  <script>
+    const audio = document.getElementById(\"bgMusic\");
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function sharePage() {
+      const url = window.location.href;
+      const message = `🎂 Wish Sumaiya a Happy Birthday! 💖\nCheck this surprise: ${url}`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  </script>
+</body>
+        </html>
